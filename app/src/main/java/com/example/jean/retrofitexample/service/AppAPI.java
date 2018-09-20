@@ -13,11 +13,11 @@ import retrofit2.http.Path;
  * @date 09/03/18.
  * Jesus loves you.
  */
-public interface CountryAPI {
+public interface AppAPI {
 
-    @GET("country/get/all")
+    @GET("https://private-c31a5-task27.apiary-mock.com/videos")
     Call<Data> getResults();
 
-    @GET("country/get/iso2code/{alpha2_code}")
-    Call<Data> getByAlpha2Code(@Path("alpha2_code") String alpha2Code);
+//    @GET("country/get/iso2code/{alpha2_code}")
+//    Call<Data> getByAlpha2Code(@Path("alpha2_code") String alpha2Code);
 }

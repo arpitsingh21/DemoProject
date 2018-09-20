@@ -7,11 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * This class represents the country service.
  *
- * @author Jean Carlos (Github: @jeancsanchez)
- * @date 29/07/16.
- * Jesus loves you.
  */
-public class CountryService {
+public class AppService {
     private Retrofit retrofit = null;
 
 
@@ -20,8 +17,8 @@ public class CountryService {
      *
      * @return The API interface
      */
-    public CountryAPI getAPI() {
-        String BASE_URL = "http://services.groupkt.com/";
+    public AppAPI getAPI() {
+        String BASE_URL = "";
 
         if (retrofit == null) {
             retrofit = new Retrofit
@@ -31,6 +28,6 @@ public class CountryService {
                     .build();
         }
 
-        return retrofit.create(CountryAPI.class);
+        return retrofit.create(AppAPI.class);
     }
 }
