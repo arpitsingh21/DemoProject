@@ -30,6 +30,13 @@ public class VideoFeedsAdapter extends RecyclerView.Adapter<VideoFeedsRvHolder> 
     public VideoFeedsRvHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final VideoFeedsRvHolder videoFeedsRvHolder = new VideoFeedsRvHolder(parent);
 
+        videoFeedsRvHolder.mWhtsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                videoFeedsRvInterface.onWhtsappShareClick(videoList.get(videoFeedsRvHolder.getAdapterPosition()));
+            }
+        });
+
         videoFeedsRvHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,11 +66,12 @@ public class VideoFeedsAdapter extends RecyclerView.Adapter<VideoFeedsRvHolder> 
     }
 
     public void setVideoList(List<Data> videoList) {
-        this.videoList = videoList;
+        this.videoList.addAll(videoList);
         notifyDataSetChanged();
     }
 
     public interface VideoFeedsRvInterface {
         void onFeedClicked(Data data);
+        void onWhtsappShareClick(Data data);
     }
 }

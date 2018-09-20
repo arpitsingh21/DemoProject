@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.jean.retrofitexample.R;
+import com.like.LikeButton;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,6 +24,10 @@ public class VideoFeedsRvHolder extends RecyclerView.ViewHolder {
     ImageView mVideoThumbnail;
     @Bind(R.id.video_title)
     TextView mVideoTitle;
+    @Bind(R.id.like_button)
+    LikeButton mLikeButton;
+    @Bind(R.id.whtsapp)
+    ImageView mWhtsapp;
 
     public VideoFeedsRvHolder(ViewGroup parent) {
         super(LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_feeds_items, parent, false));
