@@ -11,7 +11,7 @@ import java.util.List;
  * @date 09/03/18.
  * Jesus loves you.
  */
-public interface CountryView {
+public interface VideoFeedsView {
 
     void countriesReady(List<Country> countries);
 }

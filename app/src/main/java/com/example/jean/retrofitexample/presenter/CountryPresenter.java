@@ -2,8 +2,8 @@ package com.example.jean.retrofitexample.presenter;
 
 import com.example.jean.retrofitexample.model.Country;
 import com.example.jean.retrofitexample.model.Data;
-import com.example.jean.retrofitexample.service.CountryService;
-import com.example.jean.retrofitexample.view.CountryView;
+import com.example.jean.retrofitexample.service.AppService;
+import com.example.jean.retrofitexample.view.VideoFeedsView;
 
 import java.util.List;
 
@@ -21,19 +21,19 @@ import retrofit2.Response;
  */
 public class CountryPresenter {
 
-    private CountryView countryView;
-    private CountryService countryService;
+    private VideoFeedsView videoFeedsView;
+    private AppService appService;
 
-    public CountryPresenter(CountryView view) {
-        this.countryView = view;
+    public CountryPresenter(VideoFeedsView view) {
+        this.videoFeedsView = view;
 
-        if (this.countryService == null) {
-            this.countryService = new CountryService();
+        if (this.appService == null) {
+            this.appService = new AppService();
         }
     }
 
     public void getCountries() {
-        countryService
+        appService
                 .getAPI()
                 .getResults()
                 .enqueue(new Callback<Data>() {
@@ -43,7 +43,7 @@ public class CountryPresenter {
 
                         if (data != null && data.getRestResponse() != null) {
                             List<Country> result = data.getRestResponse().getResult();
-                            countryView.countriesReady(result);
+                            videoFeedsView.countriesReady(result);
                         }
                     }
 
