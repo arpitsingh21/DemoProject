@@ -13,6 +13,7 @@ public class Navigator {
     public static void navigateToVideoDetailsActivity(Activity activity, String url){
         if (activity != null) {
             Intent intentToLaunch = new Intent(activity, VideoDetailActivity.class);
+            intentToLaunch.putExtra("url",url);
             activity.startActivity(intentToLaunch);
         }
     }

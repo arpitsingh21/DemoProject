@@ -44,7 +44,7 @@ public class VideoFeedPresenter {
 
                         if (data != null && data.getVideos() != null) {
                             List<Data> result = data.getVideos();
-                            videoFeedsView.countriesReady(result);
+                            videoFeedsView.onVideoListFetched(result);
                         }
 
                     }

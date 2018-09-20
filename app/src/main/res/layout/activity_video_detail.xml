@@ -6,4 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".view.VideoDetailActivity">
 
+    <cn.jzvd.JzvdStd
+        android:id="@+id/videoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </android.support.constraint.ConstraintLayout>

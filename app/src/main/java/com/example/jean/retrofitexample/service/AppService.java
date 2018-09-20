@@ -18,7 +18,7 @@ public class AppService {
      * @return The API interface
      */
     public AppAPI getAPI() {
-        String BASE_URL = "";
+        String BASE_URL = "https://private-c31a5-task27.apiary-mock.com";
 
         if (retrofit == null) {
             retrofit = new Retrofit

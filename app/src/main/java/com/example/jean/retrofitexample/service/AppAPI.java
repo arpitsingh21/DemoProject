@@ -16,7 +16,7 @@ import retrofit2.http.Path;
  */
 public interface AppAPI {
 
-    @GET("https://private-c31a5-task27.apiary-mock.com/videos")
+    @GET("/videos")
     Call<RestResponse> getResults();
 
 //    @GET("country/get/iso2code/{alpha2_code}")
