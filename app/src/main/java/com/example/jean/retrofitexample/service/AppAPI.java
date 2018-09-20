@@ -1,6 +1,7 @@
 package com.example.jean.retrofitexample.service;
 
 import com.example.jean.retrofitexample.model.Data;
+import com.example.jean.retrofitexample.model.RestResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,7 +17,7 @@ import retrofit2.http.Path;
 public interface AppAPI {
 
     @GET("https://private-c31a5-task27.apiary-mock.com/videos")
-    Call<Data> getResults();
+    Call<RestResponse> getResults();
 
 //    @GET("country/get/iso2code/{alpha2_code}")
 //    Call<Data> getByAlpha2Code(@Path("alpha2_code") String alpha2Code);

@@ -1,7 +1,7 @@
 package com.example.jean.retrofitexample.presenter;
 
-import com.example.jean.retrofitexample.model.Country;
 import com.example.jean.retrofitexample.model.Data;
+import com.example.jean.retrofitexample.model.RestResponse;
 import com.example.jean.retrofitexample.service.AppService;
 import com.example.jean.retrofitexample.view.VideoFeedsView;
 
@@ -19,12 +19,12 @@ import retrofit2.Response;
  * @date 29/07/16.
  * Jesus loves you.
  */
-public class CountryPresenter {
+public class VideoFeedPresenter {
 
     private VideoFeedsView videoFeedsView;
     private AppService appService;
 
-    public CountryPresenter(VideoFeedsView view) {
+    public VideoFeedPresenter(VideoFeedsView view) {
         this.videoFeedsView = view;
 
         if (this.appService == null) {
@@ -32,28 +32,26 @@ public class CountryPresenter {
         }
     }
 
-    public void getCountries() {
+    public void getvideoFeeds() {
         appService
                 .getAPI()
                 .getResults()
-                .enqueue(new Callback<Data>() {
+                .enqueue(new Callback<RestResponse>() {
                     @Override
-                    public void onResponse(Call<Data> call, Response<Data> response) {
-                        Data data = response.body();
+                    public void onResponse(Call<RestResponse> call, Response<RestResponse> response) {
 
-                        if (data != null && data.getRestResponse() != null) {
-                            List<Country> result = data.getRestResponse().getResult();
+                        RestResponse data = response.body();
+
+                        if (data != null && data.getVideos() != null) {
+                            List<Data> result = data.getVideos();
                             videoFeedsView.countriesReady(result);
                         }
+
                     }
 
                     @Override
-                    public void onFailure(Call<Data> call, Throwable t) {
-                        try {
-                            throw new InterruptedException("Something went wrong!");
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                    public void onFailure(Call<RestResponse> call, Throwable t) {
+
                     }
                 });
     }

@@ -31,6 +31,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:24+'
     compile 'com.android.support:recyclerview-v7:24+'
     compile 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     testCompile 'junit:junit:4.12'
 }

@@ -1,5 +1,6 @@
 package com.example.jean.retrofitexample.model;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -11,17 +12,16 @@ import java.util.List;
  */
 public class RestResponse {
 
-    @SerializedName("messages")
-    private List<String> messages;
+    @SerializedName("videos")
+    @Expose
+    private List<Data> videos = null;
 
-    @SerializedName("result")
-    private List<Country> result;
-
-    public List<Country> getResult() {
-        return result;
+    public List<Data> getVideos() {
+        return videos;
     }
 
-    public List<String> getMessages() {
-        return messages;
+    public void setVideos(List<Data> videos) {
+        this.videos = videos;
     }
+
 }

@@ -1,26 +1,28 @@
-package com.example.jean.retrofitexample.viewHolders;
+package com.example.jean.retrofitexample.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.jean.retrofitexample.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by Harikesh on 20/09/2018.
+ * Created by Arpit on 20/09/2018.
  */
 public class VideoFeedsRvHolder extends RecyclerView.ViewHolder {
 
-
-//    @BindView(R.id.text_appointment_uId)
-//    TextView textAppointmentUId;
-//    @BindView(R.id.detailsLayout)
-//    LinearLayout detailsLayout;
-
+    @Bind(R.id.layout_card)
+    LinearLayout mLayoutCard;
+    @Bind(R.id.video_thumbnail)
+    ImageView mVideoThumbnail;
+    @Bind(R.id.video_title)
+    TextView mVideoTitle;
 
     public VideoFeedsRvHolder(ViewGroup parent) {
         super(LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_feeds_items, parent, false));

@@ -1,6 +1,6 @@
 package com.example.jean.retrofitexample.view;
 
-import com.example.jean.retrofitexample.model.Country;
+import com.example.jean.retrofitexample.model.Data;
 
 import java.util.List;
 
@@ -13,5 +13,5 @@ import java.util.List;
  */
 public interface VideoFeedsView {
 
-    void countriesReady(List<Country> countries);
+    void onVideoListFetched(List<Data> videoList);
 }
